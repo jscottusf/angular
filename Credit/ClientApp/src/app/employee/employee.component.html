@@ -1,0 +1,26 @@
+<h1>Employee Management Page</h1>
+<p>This page will contain the read, update, delete, and create features</p>
+
+<div *ngIf="!emplist">
+    ...loading
+</div>
+<table *ngIf="emplist" class="table">
+    <thead>
+        <tr>
+            <th>Employee Id</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>City</th>
+            <th>Department</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let emp of emplist">
+            <td>{{emp.empid}}</td>
+            <td>{{emp.name}}</td>
+            <td>{{emp.gender}}</td>
+            <td>{{emp.city}}</td>
+            <td>{{emp.department}}</td>
+        </tr>
+    </tbody>
+</table>

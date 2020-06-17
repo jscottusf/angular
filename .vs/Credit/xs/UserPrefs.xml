@@ -1,0 +1,34 @@
+﻿<Properties StartupConfiguration="{C675F699-77F4-425E-944C-0494D7FB5278}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Credit/ClientApp/src/app/app.module.ts">
+    <Files>
+      <File FileName="Credit/ClientApp/src/app/employee/employee.component.html" Line="19" Column="27" />
+      <File FileName="Credit/ClientApp/src/app/employee/employee.component.ts" Line="8" Column="3" />
+      <File FileName="Credit/ClientApp/src/Services/employees.service.ts" Line="23" Column="22" />
+      <File FileName="Credit/ClientApp/src/app/app.module.ts" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Credit" expanded="True">
+            <Node name="Credit" expanded="True">
+              <Node name="ClientApp" expanded="True">
+                <Node name="src" expanded="True">
+                  <Node name="app" expanded="True">
+                    <Node name="app.module.ts" selected="True" />
+                  </Node>
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Credit PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
