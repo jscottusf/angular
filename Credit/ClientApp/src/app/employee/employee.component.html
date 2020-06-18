@@ -8,7 +8,8 @@
     <thead>
         <tr>
             <th>Employee Id</th>
-            <th>Name</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
             <th>Gender</th>
             <th>City</th>
             <th>Department</th>
@@ -16,8 +17,9 @@
     </thead>
     <tbody>
         <tr *ngFor="let emp of emplist">
-            <td>{{emp.empid}}</td>
-            <td>{{emp.name}}</td>
+            <td>{{emp.id}}</td>
+            <td>{{emp.firstName}}</td>
+            <td>{{emp.lastName}}</td>
             <td>{{emp.gender}}</td>
             <td>{{emp.city}}</td>
             <td>{{emp.department}}</td>

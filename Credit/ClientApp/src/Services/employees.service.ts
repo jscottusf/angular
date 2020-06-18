@@ -10,14 +10,15 @@ export class EmployeeService {
   }
 
   getallEmployees(): Observable<EmployeeDataModel> {
-    return this.httpobj.get<EmployeeDataModel>(this.appurl + "api/employee/index");
+    return this.httpobj.get<EmployeeDataModel>(this.appurl + "api/employees");
   }
 
 }
 
 export class EmployeeDataModel {
-  empid: number;
-  name: string;
+  id: number;
+  firstName: string;
+  lastName: string;
   gender: string;
   city: string;
   department: string;
