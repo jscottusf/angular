@@ -50,9 +50,32 @@ namespace Credit.Controllers
             return CreatedAtRoute(nameof(GetEmployeeById), new { Id = emp.Id }, emp);
         }
 
+        //PUT api/employees/id
+        [HttpPut("{id}")]
+        public ActionResult UpdateEmployee(int id, Employee emp)
+        {
+            var employeeModelFromRepo = _repository.GetEmployeeById(id);
+            if (employeeModelFromRepo == null)
+            {
+                return NotFound();
+            }
+            var employee = new Employee {
+                Id = employeeModelFromRepo.Id,
+                FirstName = emp.FirstName,
+                LastName = emp.LastName,
+                City = emp.City,
+                Department = emp.Department,
+                Gender = emp.Gender
+            };
+            _repository.DeleteEmployee(employeeModelFromRepo);
+            _repository.UpdateEmployee(employee);
+            _repository.SaveChanges();
+            return NoContent();
+        }
+
         //DELETE api/employees/id
         [HttpDelete("{id}")]
-        public ActionResult DeleteEmployee(Employee emp)
+        public ActionResult DeleteEmployee(int id)
         {
             var employeeModelFromRepo = _repository.GetEmployeeById(id);
             if (employeeModelFromRepo == null)

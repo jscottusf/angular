@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using Credit.Models;
 
 namespace Credit.Data
@@ -51,7 +52,7 @@ namespace Credit.Data
 
         public void UpdateEmployee(Employee emp)
         {
-            //nothing
+            _context.Employees.Update(emp);
         }
     }
 }
