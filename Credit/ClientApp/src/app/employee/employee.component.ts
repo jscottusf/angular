@@ -21,9 +21,19 @@ export class EmployeeComponent implements OnInit {
   }
 
   getAllEmployees() {
-    this.serviceEmployee
-      .getallEmployees()
-      .subscribe((data) => (this.emplist = data));
+    this.serviceEmployee.getallEmployees().subscribe(
+      (data) => (this.emplist = data),
+      (err) => {
+        console.log(err);
+      }
+    );
+  }
+
+  deleteEmployee(id) {
+    this.serviceEmployee.deleteEmployee(id).subscribe(
+      (res) => this.getAllEmployees(),
+      (err) => console.log(err)
+    );
   }
 
   exexOnAddEmp($event: any) {

@@ -19,9 +19,13 @@
             <th>Gender</th>
             <th>City</th>
             <th>Department</th>
+            <th>Delete</th>
           </tr>
         </thead>
-        <tbody>
+        <div *ngIf="!emplist.length">
+          <h4>No Employees to display</h4>
+        </div>
+        <tbody *ngIf="emplist.length">
           <tr *ngFor="let emp of emplist">
             <td>{{ emp.id }}</td>
             <td>{{ emp.firstName }}</td>
@@ -29,6 +33,13 @@
             <td>{{ emp.gender }}</td>
             <td>{{ emp.city }}</td>
             <td>{{ emp.department }}</td>
+            <td>
+              <i
+                id="{{ emp.id }}"
+                class="fas fa-user-times delete-icon"
+                (click)="deleteEmployee(emp.id)"
+              ></i>
+            </td>
           </tr>
         </tbody>
       </table>

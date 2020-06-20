@@ -22,6 +22,10 @@ export class EmployeeService implements OnInit {
   postNewEmployee(formData: EmployeeDataModel) {
     return this.httpobj.post(this.appurl + "api/employees", formData);
   }
+
+  deleteEmployee(id: number) {
+    return this.httpobj.delete(this.appurl + "api/employees/" + id);
+  }
 }
 
 export class EmployeeDataModel {
