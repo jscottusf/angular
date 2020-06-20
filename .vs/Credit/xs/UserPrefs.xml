@@ -1,20 +1,28 @@
 ﻿<Properties StartupConfiguration="{C675F699-77F4-425E-944C-0494D7FB5278}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Credit/Data/AppDbContext.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Credit/ClientApp/src/app/new-employee-form/new-employee-form.component.html">
     <Files>
-      <File FileName="Credit/Controllers/EmployeesController.cs" Line="65" Column="46" />
-      <File FileName="Credit/Data/IEmployeeRepo.cs" Line="1" Column="1" />
-      <File FileName="Credit/Data/SqlEmployeeRepo.cs" Line="54" Column="22" />
-      <File FileName="Credit/Data/AppDbContext.cs" Line="1" Column="1" />
+      <File FileName="Credit/ClientApp/src/Services/employees.service.ts" Line="18" Column="4" />
+      <File FileName="Credit/ClientApp/src/app/new-employee-form/new-employee-form.component.ts" />
+      <File FileName="Credit/ClientApp/src/app/new-employee-form/new-employee-form.component.html" Line="2" Column="27" />
+      <File FileName="Credit/ClientApp/src/app/employee/employee.component.ts" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Credit" expanded="True">
             <Node name="Credit" expanded="True">
-              <Node name="Controllers" expanded="True" />
-              <Node name="Data" expanded="True">
-                <Node name="AppDbContext.cs" selected="True" />
+              <Node name="ClientApp" expanded="True">
+                <Node name="src" expanded="True">
+                  <Node name="app" expanded="True">
+                    <Node name="employee" expanded="True" />
+                    <Node name="new-employee-form" expanded="True">
+                      <Node name="new-employee-form.component.html" selected="True" />
+                    </Node>
+                  </Node>
+                  <Node name="Services" expanded="True" />
+                </Node>
               </Node>
+              <Node name="Data" expanded="True" />
             </Node>
           </Node>
         </State>

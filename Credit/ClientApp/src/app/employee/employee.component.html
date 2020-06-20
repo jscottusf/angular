@@ -2,27 +2,36 @@
 <p>This page will contain the read, update, delete, and create features</p>
 
 <div *ngIf="!emplist">
-    ...loading
+  ...loading
 </div>
-<table *ngIf="emplist" class="table">
-    <thead>
-        <tr>
+<div>
+  <div class="row">
+    <div class="col-lg-3">
+      <newEmpForm (onAddEmployee)="exexOnAddEmp($event)"></newEmpForm>
+    </div>
+    <div class="col-lg-9">
+      <table *ngIf="emplist" class="table">
+        <thead>
+          <tr>
             <th>Employee Id</th>
             <th>Firstname</th>
             <th>Lastname</th>
             <th>Gender</th>
             <th>City</th>
             <th>Department</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let emp of emplist">
-            <td>{{emp.id}}</td>
-            <td>{{emp.firstName}}</td>
-            <td>{{emp.lastName}}</td>
-            <td>{{emp.gender}}</td>
-            <td>{{emp.city}}</td>
-            <td>{{emp.department}}</td>
-        </tr>
-    </tbody>
-</table>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let emp of emplist">
+            <td>{{ emp.id }}</td>
+            <td>{{ emp.firstName }}</td>
+            <td>{{ emp.lastName }}</td>
+            <td>{{ emp.gender }}</td>
+            <td>{{ emp.city }}</td>
+            <td>{{ emp.department }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

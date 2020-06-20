@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { EmployeeService } from '../Services/employees.service';
+import { NewEmployeeFormComponent } from './new-employee-form/new-employee-form.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { EmployeeService } from '../Services/employees.service';
     NavMenuComponent,
     HomeComponent,
     CounterComponent,
-    EmployeeComponent
+    EmployeeComponent,
+    NewEmployeeFormComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
