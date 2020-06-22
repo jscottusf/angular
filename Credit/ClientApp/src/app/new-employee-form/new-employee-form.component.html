@@ -1,67 +1,82 @@
-
 <div [hidden]="submitted">
     <form #form="ngForm" (submit)="onSubmit(form)">
         <div class="form-group">
             <label for="name">First Name</label>
-            <input type="text" class="form-control" id="firstName"
-                    required
-                    [(ngModel)]="employee.firstName" name="firstName"
-                    #firstName="ngModel">
+            <input type="text"
+                   class="form-control"
+                   id="firstName"
+                   required
+                   [(ngModel)]="form.firstName"
+                   name="firstName"
+                   #firstName="ngModel" />
             <div [hidden]="firstName.valid || firstName.pristine"
-                    class="alert alert-danger">
+                 class="alert alert-danger">
                 First Name is required
             </div>
         </div>
 
         <div class="form-group">
             <label for="name">Last Name</label>
-            <input type="text" class="form-control" id="lastName"
-                    required
-                    [(ngModel)]="employee.lastName" name="lastName"
-                    #lastName="ngModel">
+            <input type="text"
+                   class="form-control"
+                   id="lastName"
+                   required
+                   [(ngModel)]="form.lastName"
+                   name="lastName"
+                   #lastName="ngModel" />
             <div [hidden]="lastName.valid || lastName.pristine"
-                    class="alert alert-danger">
+                 class="alert alert-danger">
                 Last Name is required
             </div>
         </div>
 
         <div class="form-group">
             <label for="name">Gender</label>
-            <input type="text" class="form-control" id="gender"
-                    required
-                    [(ngModel)]="employee.gender" name="gender"
-                    #gender="ngModel">
+            <input type="text"
+                   class="form-control"
+                   id="gender"
+                   required
+                   [(ngModel)]="form.gender"
+                   name="gender"
+                   #gender="ngModel" />
             <div [hidden]="gender.valid || gender.pristine"
-                    class="alert alert-danger">
+                 class="alert alert-danger">
                 Gender is required
             </div>
         </div>
 
         <div class="form-group">
             <label for="name">City</label>
-            <input type="text" class="form-control" id="city"
-                    required
-                    [(ngModel)]="employee.city" name="city"
-                    #city="ngModel">
-            <div [hidden]="city.valid || city.pristine"
-                    class="alert alert-danger">
+            <input type="text"
+                   class="form-control"
+                   id="city"
+                   required
+                   [(ngModel)]="form.city"
+                   name="city"
+                   #city="ngModel" />
+            <div [hidden]="city.valid || city.pristine" class="alert alert-danger">
                 Employee City is required
             </div>
         </div>
 
         <div class="form-group">
             <label for="name">Department</label>
-            <input type="text" class="form-control" id="department"
-                    required
-                    [(ngModel)]="employee.department" name="department"
-                    #department="ngModel">
+            <input type="text"
+                   class="form-control"
+                   id="department"
+                   required
+                   [(ngModel)]="form.department"
+                   name="department"
+                   #department="ngModel" />
             <div [hidden]="department.valid || department.pristine"
-                    class="alert alert-danger">
+                 class="alert alert-danger">
                 Department is required
             </div>
         </div>
 
-        <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Submit New Employee</button>
+        <button type="submit" class="btn btn-primary" [disabled]="form.invalid">
+            Submit New Employee
+        </button>
     </form>
     <br /><br /><br /><br /><br />
 </div>

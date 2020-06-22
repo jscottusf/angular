@@ -15,15 +15,15 @@ export class NewEmployeeFormComponent implements OnInit {
 
   public empModel: EmployeeDataModel;
 
-  constructor(private employee: EmployeeService) {
+  constructor(private service: EmployeeService) {}
+
+  ngOnInit() {
     this.resetForm();
-    this.onSubmit(employee);
   }
 
-  ngOnInit() {}
-
-  resetForm(employee?: NgForm) {
-    if (employee != null) employee.resetForm();
+  resetForm(form?: NgForm) {
+    if (form != null)
+      form.form.reset();
     this.empModel = {
       id: null,
       firstName: "",
@@ -35,13 +35,14 @@ export class NewEmployeeFormComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    this.employee.postNewEmployee(form.value).subscribe(
+    this.service.postNewEmployee(form.value).subscribe(
       (res) => {
+        debugger;
         this.resetForm(form);
-        this.employee.getallEmployees();
         this.onAddEmployee.emit();
       },
       (err) => {
+        debugger;
         console.log(err);
       }
     );

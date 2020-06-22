@@ -4,27 +4,30 @@ import { Observable } from "rxjs";
 
 export class EmployeeService implements OnInit {
   appurl: string = "";
-  list: EmployeeDataModel[];
 
   constructor(
     private httpobj: HttpClient,
     @Inject("BASE_URL") _baseurl: string
   ) {
-    this.appurl = _baseurl;
+    this.appurl = _baseurl + "api/employees/";
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   getallEmployees(): Observable<EmployeeDataModel> {
-    return this.httpobj.get<EmployeeDataModel>(this.appurl + "api/employees");
+    return this.httpobj.get<EmployeeDataModel>(this.appurl);
   }
 
   postNewEmployee(formData: EmployeeDataModel) {
-    return this.httpobj.post(this.appurl + "api/employees", formData);
+    return this.httpobj.post(this.appurl, formData);
   }
 
   deleteEmployee(id: number) {
-    return this.httpobj.delete(this.appurl + "api/employees/" + id);
+    return this.httpobj.delete(this.appurl + id);
+  }
+
+  editEmployee(id: number, formData: EmployeeDataModel) {
+    return this.httpobj.put(this.appurl + id, formData);
   }
 }
 
@@ -36,3 +39,4 @@ export class EmployeeDataModel {
   city: string;
   department: string;
 }
+

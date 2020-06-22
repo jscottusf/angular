@@ -1,10 +1,11 @@
 ﻿<Properties StartupConfiguration="{C675F699-77F4-425E-944C-0494D7FB5278}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Credit/ClientApp/src/app/new-employee-form/new-employee-form.component.html">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Credit/ClientApp/src/app/modal/modal.component.ts">
     <Files>
-      <File FileName="Credit/ClientApp/src/Services/employees.service.ts" Line="18" Column="4" />
-      <File FileName="Credit/ClientApp/src/app/new-employee-form/new-employee-form.component.ts" />
-      <File FileName="Credit/ClientApp/src/app/new-employee-form/new-employee-form.component.html" Line="2" Column="27" />
-      <File FileName="Credit/ClientApp/src/app/employee/employee.component.ts" />
+      <File FileName="Credit/ClientApp/src/app/employee/employee.component.ts" Line="1" Column="1" />
+      <File FileName="Credit/ClientApp/src/app/employee/employee.component.html" Line="49" Column="25" />
+      <File FileName="Credit/ClientApp/src/app/modal/modal.component.ts" Line="27" Column="2" />
+      <File FileName="Credit/ClientApp/src/app/modal/modal.component.html" Line="7" Column="25" />
+      <File FileName="Credit/ClientApp/src/app/app.module.ts" Line="12" Column="26" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -15,11 +16,10 @@
                 <Node name="src" expanded="True">
                   <Node name="app" expanded="True">
                     <Node name="employee" expanded="True" />
-                    <Node name="new-employee-form" expanded="True">
-                      <Node name="new-employee-form.component.html" selected="True" />
+                    <Node name="modal" expanded="True">
+                      <Node name="modal.component.ts" selected="True" />
                     </Node>
                   </Node>
-                  <Node name="Services" expanded="True" />
                 </Node>
               </Node>
               <Node name="Data" expanded="True" />
