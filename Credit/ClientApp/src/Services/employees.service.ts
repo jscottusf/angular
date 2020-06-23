@@ -12,10 +12,14 @@ export class EmployeeService implements OnInit {
     this.appurl = _baseurl + "api/employees/";
   }
 
-  ngOnInit() { }
+  ngOnInit() {}
 
   getallEmployees(): Observable<EmployeeDataModel> {
     return this.httpobj.get<EmployeeDataModel>(this.appurl);
+  }
+
+  getEmployeeById(id): Observable<EmployeeDataModel> {
+    return this.httpobj.get<EmployeeDataModel>(this.appurl + id);
   }
 
   postNewEmployee(formData: EmployeeDataModel) {
@@ -39,4 +43,3 @@ export class EmployeeDataModel {
   city: string;
   department: string;
 }
-

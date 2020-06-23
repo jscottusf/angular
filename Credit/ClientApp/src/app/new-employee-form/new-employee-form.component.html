@@ -1,82 +1,91 @@
-<div [hidden]="submitted">
-    <form #form="ngForm" (submit)="onSubmit(form)">
-        <div class="form-group">
-            <label for="name">First Name</label>
-            <input type="text"
-                   class="form-control"
-                   id="firstName"
-                   required
-                   [(ngModel)]="form.firstName"
-                   name="firstName"
-                   #firstName="ngModel" />
-            <div [hidden]="firstName.valid || firstName.pristine"
-                 class="alert alert-danger">
-                First Name is required
-            </div>
-        </div>
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Add New Employee</h4>
+    </div>
+    <div class="modal-body">
+        <div [hidden]="submitted">
+            <form #form="ngForm" (submit)="onSubmit(form); modal.close()">
+                <input type="hidden" name="id" [value]="form.id" />
+                <div class="form-group">
+                    <label for="name">First Name</label>
+                    <input type="text"
+                           class="form-control"
+                           id="firstName"
+                           required
+                           [(ngModel)]="form.firstName"
+                           name="firstName"
+                           #firstName="ngModel" />
+                    <div [hidden]="firstName.valid || firstName.pristine"
+                         class="alert alert-danger">
+                        First Name is required
+                    </div>
+                </div>
 
-        <div class="form-group">
-            <label for="name">Last Name</label>
-            <input type="text"
-                   class="form-control"
-                   id="lastName"
-                   required
-                   [(ngModel)]="form.lastName"
-                   name="lastName"
-                   #lastName="ngModel" />
-            <div [hidden]="lastName.valid || lastName.pristine"
-                 class="alert alert-danger">
-                Last Name is required
-            </div>
-        </div>
+                <div class="form-group">
+                    <label for="name">Last Name</label>
+                    <input type="text"
+                           class="form-control"
+                           id="lastName"
+                           required
+                           [(ngModel)]="form.lastName"
+                           name="lastName"
+                           #lastName="ngModel" />
+                    <div [hidden]="lastName.valid || lastName.pristine"
+                         class="alert alert-danger">
+                        Last Name is required
+                    </div>
+                </div>
 
-        <div class="form-group">
-            <label for="name">Gender</label>
-            <input type="text"
-                   class="form-control"
-                   id="gender"
-                   required
-                   [(ngModel)]="form.gender"
-                   name="gender"
-                   #gender="ngModel" />
-            <div [hidden]="gender.valid || gender.pristine"
-                 class="alert alert-danger">
-                Gender is required
-            </div>
-        </div>
+                <div class="form-group">
+                    <label for="name">Gender</label>
+                    <input type="text"
+                           class="form-control"
+                           id="gender"
+                           required
+                           [(ngModel)]="form.gender"
+                           name="gender"
+                           #gender="ngModel" />
+                    <div [hidden]="gender.valid || gender.pristine"
+                         class="alert alert-danger">
+                        Gender is required
+                    </div>
+                </div>
 
-        <div class="form-group">
-            <label for="name">City</label>
-            <input type="text"
-                   class="form-control"
-                   id="city"
-                   required
-                   [(ngModel)]="form.city"
-                   name="city"
-                   #city="ngModel" />
-            <div [hidden]="city.valid || city.pristine" class="alert alert-danger">
-                Employee City is required
-            </div>
-        </div>
+                <div class="form-group">
+                    <label for="name">City</label>
+                    <input type="text"
+                           class="form-control"
+                           id="city"
+                           required
+                           [(ngModel)]="form.city"
+                           name="city"
+                           #city="ngModel" />
+                    <div [hidden]="city.valid || city.pristine" class="alert alert-danger">
+                        Employee City is required
+                    </div>
+                </div>
 
-        <div class="form-group">
-            <label for="name">Department</label>
-            <input type="text"
-                   class="form-control"
-                   id="department"
-                   required
-                   [(ngModel)]="form.department"
-                   name="department"
-                   #department="ngModel" />
-            <div [hidden]="department.valid || department.pristine"
-                 class="alert alert-danger">
-                Department is required
-            </div>
-        </div>
+                <div class="form-group">
+                    <label for="name">Department</label>
+                    <input type="text"
+                           class="form-control"
+                           id="department"
+                           required
+                           [(ngModel)]="form.department"
+                           name="department"
+                           #department="ngModel" />
+                    <div [hidden]="department.valid || department.pristine"
+                         class="alert alert-danger">
+                        Department is required
+                    </div>
+                </div>
 
-        <button type="submit" class="btn btn-primary" [disabled]="form.invalid">
-            Submit New Employee
-        </button>
-    </form>
-    <br /><br /><br /><br /><br />
-</div>
+                <button type="submit" class="btn btn-primary" [disabled]="form.invalid">
+                    Submit New Employee
+                </button>
+            </form>
+        </div>
+    </div>
+</ng-template>
+
+<button class="btn btn-primary float-right mt-4" (click)="open(content)">+ Add New Employee</button>

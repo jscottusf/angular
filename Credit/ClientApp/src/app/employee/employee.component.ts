@@ -1,8 +1,9 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input, EventEmitter } from "@angular/core";
 import {
   EmployeeDataModel,
   EmployeeService,
 } from "../../Services/employees.service";
+import { NgForm } from "@angular/forms";
 
 @Component({
   selector: "app-employee",
@@ -10,6 +11,7 @@ import {
   styleUrls: ["./employee.component.css"],
 })
 export class EmployeeComponent implements OnInit {
+  @Input() closeModal: string;
   public emplist: EmployeeDataModel;
 
   constructor(private serviceEmployee: EmployeeService) {
@@ -30,10 +32,12 @@ export class EmployeeComponent implements OnInit {
   }
 
   deleteEmployee(id) {
-    this.serviceEmployee.deleteEmployee(id).subscribe(
-      (res) => this.getAllEmployees(),
-      (err) => console.log(err)
-    );
+    if (confirm("Are you sure?")) {
+      this.serviceEmployee.deleteEmployee(id).subscribe(
+        (res) => this.getAllEmployees(),
+        (err) => console.log(err)
+      );
+    }
   }
 
   exexOnAddEmp($event: any) {

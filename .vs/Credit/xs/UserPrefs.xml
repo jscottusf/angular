@@ -1,9 +1,10 @@
 ﻿<Properties StartupConfiguration="{C675F699-77F4-425E-944C-0494D7FB5278}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="Credit/ClientApp/src/app/employee/employee.component.html">
     <Files>
-      <File FileName="Credit/ClientApp/src/app/modal/modal.component.html" Line="32" Column="29" />
-      <File FileName="Credit/ClientApp/src/app/modal/modal.component.ts" Line="30" Column="6" />
-      <File FileName="Credit/ClientApp/src/app/employee/employee.component.html" Line="10" Column="10" />
+      <File FileName="Credit/ClientApp/src/app/modal/modal.component.html" Line="13" Column="98" />
+      <File FileName="Credit/ClientApp/src/app/employee/employee.component.html" Line="16" Column="16" />
+      <File FileName="Credit/ClientApp/src/app/edit-employee-form/edit-employee-form.component.html" Line="76" Column="48" />
+      <File FileName="Credit/ClientApp/src/app/edit-employee-form/edit-employee-form.component.ts" Line="26" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,13 +14,15 @@
               <Node name="ClientApp" expanded="True">
                 <Node name="src" expanded="True">
                   <Node name="app" expanded="True">
+                    <Node name="edit-employee-form" expanded="True" />
                     <Node name="employee" expanded="True">
                       <Node name="employee.component.html" selected="True" />
                     </Node>
+                    <Node name="modal" expanded="True" />
+                    <Node name="new-employee-form" expanded="True" />
                   </Node>
                 </Node>
               </Node>
-              <Node name="Data" expanded="True" />
             </Node>
           </Node>
         </State>
