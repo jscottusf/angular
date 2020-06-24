@@ -12,6 +12,7 @@ import { EmployeeService } from "../Services/employees.service";
 import { NewEmployeeFormComponent } from "./new-employee-form/new-employee-form.component";
 import { ModalComponent } from "./modal/modal.component";
 import { EditEmployeeFormComponent } from "./edit-employee-form/edit-employee-form.component";
+import { AlertComponent } from './alert/alert.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { EditEmployeeFormComponent } from "./edit-employee-form/edit-employee-fo
     NewEmployeeFormComponent,
     ModalComponent,
     EditEmployeeFormComponent,
+    AlertComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: "ng-cli-universal" }),

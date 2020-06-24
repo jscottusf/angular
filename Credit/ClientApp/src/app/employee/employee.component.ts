@@ -11,9 +11,10 @@ import { NgForm } from "@angular/forms";
   styleUrls: ["./employee.component.css"],
 })
 export class EmployeeComponent implements OnInit {
-  @Input() closeModal: string;
+  alertShow = false;
+  alertMessage = "";
+  alertType = "";
   public emplist: EmployeeDataModel;
-
   constructor(private serviceEmployee: EmployeeService) {
     this.getAllEmployees();
   }
@@ -32,15 +33,31 @@ export class EmployeeComponent implements OnInit {
   }
 
   deleteEmployee(id) {
-    if (confirm("Are you sure?")) {
-      this.serviceEmployee.deleteEmployee(id).subscribe(
-        (res) => this.getAllEmployees(),
-        (err) => console.log(err)
-      );
-    }
+    this.serviceEmployee.deleteEmployee(id).subscribe(
+      (res) => {
+        this.getAllEmployees();
+        this.alertType = "danger";
+        this.alertMessage = "Employee Removed";
+        this.alertShow = true;
+      },
+      (err) => console.log(err)
+    );
   }
 
   exexOnAddEmp($event: any) {
     this.getAllEmployees();
+    this.alertType = "success";
+    this.alertMessage = "New Employee added successfully";
+    this.alertShow = true;
+  }
+
+  exexOnDismiss($event: any) {
+    this.alertShow = false;
+  }
+
+  exexOnEdit($event: any) {
+    this.alertShow = true;
+    this.alertMessage = "Employee changes updated sucessfully";
+    this.alertType = "success";
   }
 }

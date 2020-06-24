@@ -1,5 +1,5 @@
-import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
+import { Component, OnInit, Output, EventEmitter } from "@angular/core";
+import { Router, ActivatedRoute } from "@angular/router";
 import {
   EmployeeDataModel,
   EmployeeService,
@@ -15,6 +15,7 @@ export class EditEmployeeFormComponent implements OnInit {
   id;
   public empData: EmployeeDataModel;
   constructor(
+    private router: Router,
     private route: ActivatedRoute,
     private serviceEmployee: EmployeeService
   ) {
@@ -34,5 +35,15 @@ export class EditEmployeeFormComponent implements OnInit {
         console.log(err);
       }
     );
+  }
+
+  editEmployee(form: NgForm) {
+    this.serviceEmployee.editEmployee(this.id, form.value).subscribe((res) => {
+      this.router.navigate(["/"]);
+    }),
+      (err) => {
+        debugger;
+        console.log(err);
+      };
   }
 }
