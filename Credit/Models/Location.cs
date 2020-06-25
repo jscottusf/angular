@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace Credit.Models
 {
-    public class City
+    public class Location
     {
         [Key]
-        public int Id { get; set; }
+        public int LocationId { get; set; }
         [Required]
-        public string CityName { get; set; }
+        public string OfficeLocation { get; set; }
+        public List<Employee> Employees { get; set; }
     }
 }

@@ -6,6 +6,7 @@ using Credit.Data;
 using Credit.Models;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Credit.Controllers
 {
@@ -24,7 +25,7 @@ namespace Credit.Controllers
 
         //GET api/employees
         [HttpGet]
-        public ActionResult <IEnumerable<Employee>> GetAllEmployees()
+            public ActionResult<IEnumerable<Employee>> GetAllEmployees()
         {
             var employeeItems = _repository.GetAllEmployees();
 
@@ -33,7 +34,7 @@ namespace Credit.Controllers
 
         //GET api/employees/id
         [HttpGet("{id}", Name = "GetEmployeeById")]
-        public ActionResult <Employee> GetEmployeeById(int id)
+        public ActionResult<Employee> GetEmployeeById(int id)
         {
             var employeeItem = _repository.GetEmployeeById(id);
 
@@ -59,11 +60,13 @@ namespace Credit.Controllers
             {
                 return NotFound();
             }
-            var employee = new Employee {
+            var employee = new Employee
+            {
                 Id = employeeModelFromRepo.Id,
                 FirstName = emp.FirstName,
                 LastName = emp.LastName,
                 City = emp.City,
+                State = emp.State,
                 Department = emp.Department,
                 Gender = emp.Gender
             };

@@ -32,8 +32,9 @@ export class NewEmployeeFormComponent implements OnInit {
       id: 0,
       firstName: "",
       lastName: "",
-      gender: "",
       city: "",
+      state: "",
+      gender: "",
       department: "",
     };
   }

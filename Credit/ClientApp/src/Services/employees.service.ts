@@ -39,7 +39,8 @@ export class EmployeeDataModel {
   id: number;
   firstName: string;
   lastName: string;
-  gender: string;
   city: string;
+  state: string;
+  gender: string;
   department: string;
 }

@@ -12,6 +12,6 @@ namespace Credit.Data
         }
 
         public DbSet<Employee> Employees { get; set; }
-        public DbSet<City> Cities { get; set; }
+        public DbSet<Location> Locations { get; set; }
     }
 }

@@ -1,53 +1,65 @@
 <div class="row">
-    <div class="col-lg-6">
-        <h1>Employee Management Page</h1>
-        <p>This page will contain the read, update, delete, and create features</p>
-    </div>
-    <div class="col-lg-6">
-        <newEmpForm body (onAddEmployee)="exexOnAddEmp($event)"></newEmpForm>
-    </div>
+  <div class="col-lg-6">
+    <h1>Employee Management Page</h1>
+    <p>This page will contain the read, update, delete, and create features</p>
+  </div>
+  <div class="col-lg-6">
+    <newEmpForm body (onAddEmployee)="exexOnAddEmp($event)"></newEmpForm>
+  </div>
 </div>
-<alert *ngIf="alertShow" alertType={{alertType}} alertMessage={{alertMessage}} (onDismiss)="exexOnDismiss($event)" (onEdit)="exexOnEdit($event)" ></alert>
+<alert
+  *ngIf="alertShow"
+  alertType="{{ alertType }}"
+  alertMessage="{{ alertMessage }}"
+  (onDismiss)="exexOnDismiss($event)"
+  (onEdit)="exexOnEdit($event)"
+></alert>
 
 <div>
-    <div *ngIf="!emplist">
-        ...loading
+  <div *ngIf="!emplist">
+    ...loading
+  </div>
+  <table *ngIf="emplist" class="table">
+    <thead>
+      <tr>
+        <th>Employee Id</th>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Gender</th>
+        <th>Department</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <div *ngIf="!emplist.length">
+      <h4>No Employees to display</h4>
     </div>
-    <table *ngIf="emplist" class="table">
-        <thead>
-            <tr>
-                <th>Employee Id</th>
-                <th>Firstname</th>
-                <th>Lastname</th>
-                <th>Gender</th>
-                <th>City</th>
-                <th>Department</th>
-                <th>Edit</th>
-                <th>Delete</th>
-            </tr>
-        </thead>
-        <div *ngIf="!emplist.length">
-            <h4>No Employees to display</h4>
-        </div>
-        <tbody *ngIf="emplist.length">
-            <tr *ngFor="let emp of emplist">
-                <td>{{ emp.id }}</td>
-                <td>{{ emp.firstName }}</td>
-                <td>{{ emp.lastName }}</td>
-                <td>{{ emp.gender }}</td>
-                <td>{{ emp.city }}</td>
-                <td>{{ emp.department }}</td>
-                <td>
-                    <i [routerLink]="['/employees/' + emp.id]" id="{{ emp.id }} " class="fas fa-edit edit-icon"></i>
-                </td>
-                <td>
-                    <i id="{{ emp.id }}"
-                        class="fas fa-user-times delete-icon"
-                        (click)="deleteEmployee(emp.id)"></i>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <tbody *ngIf="emplist.length">
+      <tr *ngFor="let emp of emplist">
+        <td>{{ emp.id }}</td>
+        <td>{{ emp.firstName }}</td>
+        <td>{{ emp.lastName }}</td>
+        <td>{{ emp.city }}</td>
+        <td>{{ emp.state }}</td>
+        <td>{{ emp.gender }}</td>
+        <td>{{ emp.department }}</td>
+        <td>
+          <i
+            [routerLink]="['/employees/' + emp.id]"
+            id="{{ emp.id }} "
+            class="fas fa-edit edit-icon"
+          ></i>
+        </td>
+        <td>
+          <i
+            id="{{ emp.id }}"
+            class="fas fa-user-times delete-icon"
+            (click)="deleteEmployee(emp.id)"
+          ></i>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
-
-
