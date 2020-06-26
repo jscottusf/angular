@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
 using Credit.Models;
 
 namespace Credit.Data
@@ -21,7 +20,9 @@ namespace Credit.Data
             {
                 throw new ArgumentNullException(nameof(emp));
             }
-
+            string newLocation = emp.City + ", " + emp.State;
+            var location = new Location { OfficeLocation = newLocation };
+            _context.Locations.Add(location);
             _context.Employees.Add(emp);
         }
 
@@ -52,7 +53,7 @@ namespace Credit.Data
 
         public void UpdateEmployee(Employee emp)
         {
-            _context.Employees.Update(emp);
+            //_context.Employees.Update(emp);
         }
     }
 }

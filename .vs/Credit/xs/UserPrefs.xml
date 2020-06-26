@@ -1,21 +1,18 @@
 ﻿<Properties StartupConfiguration="{C675F699-77F4-425E-944C-0494D7FB5278}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Credit/Migrations/20200625193328_InitialCreate.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Credit/Data/SqlEmployeeRepo.cs">
     <Files>
-      <File FileName="Credit/Migrations/20200625193328_InitialCreate.Designer.cs" Line="1" Column="1" />
-      <File FileName="Credit/Migrations/EmployeeContextModelSnapshot.cs" Line="1" Column="1" />
-      <File FileName="Credit/Migrations/20200625193328_InitialCreate.cs" Line="1" Column="1" />
+      <File FileName="Credit/Dtos/EmployeeCreateDto.cs" Line="18" Column="2" />
+      <File FileName="Credit/Dtos/EmployeeReadDto.cs" Line="13" Column="43" />
+      <File FileName="Credit/Dtos/EmployeeUpdateDto.cs" Line="14" Column="43" />
+      <File FileName="Credit/Data/SqlEmployeeRepo.cs" Line="25" Column="46" />
+      <File FileName="Credit/Models/Employee.cs" Line="21" Column="2" />
+      <File FileName="Credit/Models/Location.cs" Line="15" Column="85" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Credit" expanded="True">
-            <Node name="Credit" expanded="True">
-              <Node name="Controllers" expanded="True" />
-              <Node name="Migrations" expanded="True">
-                <Node name="20200625193328_InitialCreate.cs" expanded="True" selected="True" />
-              </Node>
-              <Node name="Models" expanded="True" />
-            </Node>
+            <Node name="Credit" expanded="True" />
           </Node>
         </State>
       </Pad>

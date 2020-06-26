@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Credit.Migrations
 {
     [DbContext(typeof(EmployeeContext))]
-    [Migration("20200625193328_InitialCreate")]
+    [Migration("20200626043337_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

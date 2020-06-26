@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using AutoMapper;
 using Credit.Data;
+using Credit.Dtos;
 using Credit.Models;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace Credit.Controllers
 {
@@ -17,15 +15,17 @@ namespace Credit.Controllers
     {
 
         private readonly IEmployeeRepo _repository;
+        private readonly IMapper _mapper;
 
-        public EmployeesController(IEmployeeRepo repository)
+        public EmployeesController(IEmployeeRepo repository, IMapper mapper)
         {
             _repository = repository;
+            _mapper = mapper;
         }
 
         //GET api/employees
         [HttpGet]
-            public ActionResult<IEnumerable<Employee>> GetAllEmployees()
+            public ActionResult<IEnumerable<EmployeeReadDto>> GetAllEmployees()
         {
             var employeeItems = _repository.GetAllEmployees();
 
@@ -43,35 +43,27 @@ namespace Credit.Controllers
 
         //POST api/employees
         [HttpPost]
-        public ActionResult<Employee> CreateEmployee(Employee emp)
+        public ActionResult<EmployeeReadDto> CreateEmployee(EmployeeCreateDto employeeCreateDto)
         {
-            _repository.CreateEmployee(emp);
+            var employeeModel = _mapper.Map<Employee>(employeeCreateDto);
+            _repository.CreateEmployee(employeeModel);
             _repository.SaveChanges();
 
-            return CreatedAtRoute(nameof(GetEmployeeById), new { Id = emp.Id }, emp);
+            var EmployeeReadDto = _mapper.Map<EmployeeReadDto>(employeeModel);
+            return CreatedAtRoute(nameof(GetEmployeeById), new { Id = EmployeeReadDto.Id }, EmployeeReadDto);
         }
 
         //PUT api/employees/id
         [HttpPut("{id}")]
-        public ActionResult UpdateEmployee(int id, Employee emp)
+        public ActionResult UpdateEmployee(int id, EmployeeUpdateDto employeeUpdateDto)
         {
             var employeeModelFromRepo = _repository.GetEmployeeById(id);
             if (employeeModelFromRepo == null)
             {
                 return NotFound();
             }
-            var employee = new Employee
-            {
-                Id = employeeModelFromRepo.Id,
-                FirstName = emp.FirstName,
-                LastName = emp.LastName,
-                City = emp.City,
-                State = emp.State,
-                Department = emp.Department,
-                Gender = emp.Gender
-            };
-            _repository.DeleteEmployee(employeeModelFromRepo);
-            _repository.UpdateEmployee(employee);
+            _mapper.Map(employeeUpdateDto, employeeModelFromRepo);
+            _repository.UpdateEmployee(employeeModelFromRepo);
             _repository.SaveChanges();
             return NoContent();
         }
