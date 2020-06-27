@@ -12,7 +12,9 @@ import { EmployeeService } from "../Services/employees.service";
 import { NewEmployeeFormComponent } from "./new-employee-form/new-employee-form.component";
 import { ModalComponent } from "./modal/modal.component";
 import { EditEmployeeFormComponent } from "./edit-employee-form/edit-employee-form.component";
-import { AlertComponent } from './alert/alert.component';
+import { AlertComponent } from "./alert/alert.component";
+import { BookSearchComponent } from "./book-search/book-search.component";
+import { BookService } from "../Services/googlebooks.service";
 
 @NgModule({
   declarations: [
@@ -23,6 +25,7 @@ import { AlertComponent } from './alert/alert.component';
     ModalComponent,
     EditEmployeeFormComponent,
     AlertComponent,
+    BookSearchComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: "ng-cli-universal" }),
@@ -31,10 +34,11 @@ import { AlertComponent } from './alert/alert.component';
     RouterModule.forRoot([
       { path: "", component: EmployeeComponent },
       { path: "employees/:id", component: EditEmployeeFormComponent },
+      { path: "booksearch", component: BookSearchComponent },
     ]),
     NgbModule,
   ],
-  providers: [EmployeeService],
+  providers: [EmployeeService, BookService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

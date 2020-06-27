@@ -15,7 +15,6 @@ export class NewEmployeeFormComponent implements OnInit {
   @Output() onAddEmployee = new EventEmitter();
 
   public empModel: EmployeeDataModel;
-  closeResult = "";
 
   constructor(
     private service: EmployeeService,
@@ -43,7 +42,7 @@ export class NewEmployeeFormComponent implements OnInit {
     if (this.empModel.id == 0) {
       this.addEmployee(form);
     } else {
-      //
+      //was thinking about writing logic to use the same modal for editing as well
     }
   }
 

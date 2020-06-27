@@ -1,18 +1,24 @@
 ﻿<Properties StartupConfiguration="{C675F699-77F4-425E-944C-0494D7FB5278}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Credit/Data/SqlEmployeeRepo.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Credit/ClientApp/src/app/book-search/book-search.component.css">
     <Files>
-      <File FileName="Credit/Dtos/EmployeeCreateDto.cs" Line="18" Column="2" />
-      <File FileName="Credit/Dtos/EmployeeReadDto.cs" Line="13" Column="43" />
-      <File FileName="Credit/Dtos/EmployeeUpdateDto.cs" Line="14" Column="43" />
-      <File FileName="Credit/Data/SqlEmployeeRepo.cs" Line="25" Column="46" />
-      <File FileName="Credit/Models/Employee.cs" Line="21" Column="2" />
-      <File FileName="Credit/Models/Location.cs" Line="15" Column="85" />
+      <File FileName="Credit/ClientApp/src/app/book-search/book-search.component.html" Line="28" Column="13" />
+      <File FileName="Credit/ClientApp/src/app/book-search/book-search.component.css" Line="7" Column="11" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Credit" expanded="True">
-            <Node name="Credit" expanded="True" />
+            <Node name="Credit" expanded="True">
+              <Node name="ClientApp" expanded="True">
+                <Node name="src" expanded="True">
+                  <Node name="app" expanded="True">
+                    <Node name="book-search" expanded="True">
+                      <Node name="book-search.component.css" selected="True" />
+                    </Node>
+                  </Node>
+                </Node>
+              </Node>
+            </Node>
           </Node>
         </State>
       </Pad>

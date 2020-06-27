@@ -1,5 +1,5 @@
 import { HttpClient } from "@angular/common/http";
-import { inject, Inject, OnInit, Input } from "@angular/core";
+import { Inject, OnInit } from "@angular/core";
 import { Observable } from "rxjs";
 
 export class EmployeeService implements OnInit {

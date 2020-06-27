@@ -1,0 +1,43 @@
+<div class="jumbotron fluid-jumbotron bg-dark text-white">
+    <div>
+        <div class="container">
+            <h1 class="display-4">Google Books</h1>
+            <p class="lead">
+                Find the <span class="text-info">perfect</span> book
+                (powered by ReactJS and the google books api)
+            </p>
+            <form #form="ngForm" class="input-group mb-3" (submit)="searchGoogleBooks(form.bookSearch)">
+                <input type="text" class="form-control" [value]="form.bookSearch" id="bookSearch" [(ngModel)]="form.bookSearch" #bookSearch="ngModel" name="bookSearch" placeholder="Seach by title, author, etc" aria-label="Recipient's username" aria-describedby="button-addon2">
+                <div class="input-group-append">
+                    <button class="btn btn-info" type="submit" id="button-addon2">Button</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="app-container">
+    <div class="grid">
+        <div class="books" *ngFor="let book of bookList">
+            <div class="card">
+                <div class="card-body card-grid">
+                    <div class="card-col">
+                        <img *ngIf="book.volumeInfo.imageLinks" src={{book.volumeInfo.imageLinks.thumbnail}}>
+                        <img *ngIf="!book.volumeInfo.imageLinks" id="generic-book" src="../../assets/images/book-generic.jpg">
+                    </div>
+                    <div class="card-col">
+                        <h5 class="card-title">{{book.volumeInfo.title}}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted" *ngIf="book.volumeInfo.authors">{{book.volumeInfo.authors[0]}}</h6>
+                        <p class="card-text">{{book.searchInfo.textSnippet}}</p>
+                        <div class="row">
+                            <a class="mx-3"href="{{book.volumeInfo.infoLink}}">Info</a>
+                            <a href="{{book.volumeInfo.previewLink}}"> Preview</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
