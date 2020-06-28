@@ -14,7 +14,8 @@ import { ModalComponent } from "./modal/modal.component";
 import { EditEmployeeFormComponent } from "./edit-employee-form/edit-employee-form.component";
 import { AlertComponent } from "./alert/alert.component";
 import { BookSearchComponent } from "./book-search/book-search.component";
-import { BookService } from "../Services/googlebooks.service";
+import { GoogleBookService } from "../Services/googlebooks.service";
+import { BookService } from "src/Services/books.service";
 
 @NgModule({
   declarations: [
@@ -38,7 +39,7 @@ import { BookService } from "../Services/googlebooks.service";
     ]),
     NgbModule,
   ],
-  providers: [EmployeeService, BookService],
+  providers: [EmployeeService, GoogleBookService, BookService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

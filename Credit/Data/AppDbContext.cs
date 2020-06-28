@@ -13,5 +13,6 @@ namespace Credit.Data
 
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Location> Locations { get; set; }
+        public DbSet<Book> Books { get; set; }
     }
 }

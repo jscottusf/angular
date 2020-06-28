@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { BookService } from "../../Services/googlebooks.service";
+import { GoogleBookService } from "../../Services/googlebooks.service";
 import { NgForm } from "@angular/forms";
 
 @Component({
@@ -13,7 +13,7 @@ export class BookSearchComponent implements OnInit {
   bookList = [];
   public bookSearch: string = "";
 
-  constructor(private bookService: BookService) {}
+  constructor(private bookService: GoogleBookService) {}
 
   ngOnInit() {
     this.query = "Jurrasic Park";

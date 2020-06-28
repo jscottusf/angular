@@ -5,7 +5,7 @@ import { Observable } from "rxjs";
 @Injectable({
   providedIn: "root",
 })
-export class BookService implements OnInit {
+export class GoogleBookService implements OnInit {
   query: string = "";
   private apiUrl = "";
   list = [];
@@ -19,14 +19,4 @@ export class BookService implements OnInit {
   searchBooks(query: string) {
     return this.http.get(this.apiUrl + query);
   }
-}
-
-export class BookDataModel {
-  id: number;
-  title: string;
-  author: string;
-  description: string;
-  image: string;
-  info: string;
-  preview: string;
 }
