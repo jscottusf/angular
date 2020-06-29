@@ -31,6 +31,7 @@ export class BookSearchComponent implements OnInit {
       (data) => {
         this.bookData = data;
         this.bookList = this.bookData.items;
+        console.log(this.bookList);
         this.resetForm();
       },
       (err) => console.log(err)

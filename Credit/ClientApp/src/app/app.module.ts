@@ -16,6 +16,8 @@ import { AlertComponent } from "./alert/alert.component";
 import { BookSearchComponent } from "./book-search/book-search.component";
 import { GoogleBookService } from "../Services/googlebooks.service";
 import { BookService } from "src/Services/books.service";
+import { FavoriteBooksComponent } from './favorite-books/favorite-books.component';
+import { SaveIconComponent } from './save-icon/save-icon.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { BookService } from "src/Services/books.service";
     EditEmployeeFormComponent,
     AlertComponent,
     BookSearchComponent,
+    FavoriteBooksComponent,
+    SaveIconComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: "ng-cli-universal" }),
@@ -36,6 +40,7 @@ import { BookService } from "src/Services/books.service";
       { path: "", component: EmployeeComponent },
       { path: "employees/:id", component: EditEmployeeFormComponent },
       { path: "booksearch", component: BookSearchComponent },
+      { path: "favoritebooks", component: FavoriteBooksComponent },
     ]),
     NgbModule,
   ],

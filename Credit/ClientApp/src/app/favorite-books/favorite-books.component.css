@@ -1,0 +1,27 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 5px;
+}
+
+.books {
+  display: grid;
+  grid-gap: 5px;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: 30% 1fr;
+}
+
+.card-col {
+  display: grid;
+}
+
+.app-container {
+  margin: 30px
+}
+
+#generic-book {
+  width: 130px;
+}

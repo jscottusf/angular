@@ -1,0 +1,35 @@
+<div class="jumbotron fluid-jumbotron bg-dark text-white">
+  <div>
+    <div class="container">
+      <h1 class="display-4">Google Books</h1>
+      <p class="lead"><span class="text-info">Favorite</span> Books</p>
+    </div>
+  </div>
+</div>
+
+<div class="app-container">
+  <h3 *ngIf="!bookModel">
+    No Books Saved yet
+  </h3>
+  <div class="grid">
+      <div class="books" *ngFor="let book of bookModel">
+          <div class="card">
+              <div class="card-body card-grid">
+                  <div class="card-col">
+                      <img *ngIf="book.imageUrl" src={{book.imageUrl}}>
+                      <img *ngIf="!book.imageUrl" id="generic-book" src="../../assets/images/book-generic.jpg">
+                  </div>
+                  <div class="card-col">
+                      <h5 class="card-title">{{book.title}}</h5>
+                      <h6 class="card-subtitle mb-2 text-muted" *ngIf="book.author">{{book.author}}</h6>
+                      <p class="card-text">{{book.description}}</p>
+                      <div class="row">
+                          <a class="mx-3" href="{{book.info}}">Info</a>
+                          <a href="{{book.preview}}"> Preview</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

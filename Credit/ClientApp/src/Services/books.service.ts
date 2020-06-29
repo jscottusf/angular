@@ -11,23 +11,23 @@ export class BookService implements OnInit {
 
   ngOnInit() {}
 
-  getallEmployees(): Observable<BookDataModel> {
+  getallBooks(): Observable<BookDataModel> {
     return this.http.get<BookDataModel>(this.appurl);
   }
 
-  getEmployeeById(id): Observable<BookDataModel> {
+  getBookById(id): Observable<BookDataModel> {
     return this.http.get<BookDataModel>(this.appurl + id);
   }
 
-  postNewEmployee(formData: BookDataModel) {
+  postNewBook(formData: BookDataModel) {
     return this.http.post(this.appurl, formData);
   }
 
-  deleteEmployee(id: number) {
+  deleteBook(id: number) {
     return this.http.delete(this.appurl + id);
   }
 
-  editEmployee(id: number, formData: BookDataModel) {
+  editBook(id: number, formData: BookDataModel) {
     return this.http.put(this.appurl + id, formData);
   }
 }

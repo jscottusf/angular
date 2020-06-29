@@ -20,6 +20,7 @@
     <div class="grid">
         <div class="books" *ngFor="let book of bookList">
             <div class="card">
+                <save-icon [book]=book></save-icon>
                 <div class="card-body card-grid">
                     <div class="card-col">
                         <img *ngIf="book.volumeInfo.imageLinks" src={{book.volumeInfo.imageLinks.thumbnail}}>
@@ -30,7 +31,7 @@
                         <h6 class="card-subtitle mb-2 text-muted" *ngIf="book.volumeInfo.authors">{{book.volumeInfo.authors[0]}}</h6>
                         <p class="card-text">{{book.searchInfo.textSnippet}}</p>
                         <div class="row">
-                            <a class="mx-3"href="{{book.volumeInfo.infoLink}}">Info</a>
+                            <a class="mx-3" href="{{book.volumeInfo.infoLink}}">Info</a>
                             <a href="{{book.volumeInfo.previewLink}}"> Preview</a>
                         </div>
                     </div>
