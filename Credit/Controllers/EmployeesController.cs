@@ -13,7 +13,6 @@ namespace Credit.Controllers
     [ApiController]
     public class EmployeesController : Controller
     {
-
         private readonly IEmployeeRepo _repository;
         private readonly IMapper _mapper;
 
@@ -62,6 +61,14 @@ namespace Credit.Controllers
             {
                 return NotFound();
             }
+            string newLocation = employeeModelFromRepo.City + ", " + employeeModelFromRepo.State;
+            var location = _repository.GetLocationByName(newLocation);
+            if (location == null)
+            {
+                location = new Location { OfficeLocation = newLocation };
+                employeeModelFromRepo.LocationId = 0;
+            }
+            employeeModelFromRepo.Location = location;
             _mapper.Map(employeeUpdateDto, employeeModelFromRepo);
             _repository.UpdateEmployee(employeeModelFromRepo);
             _repository.SaveChanges();

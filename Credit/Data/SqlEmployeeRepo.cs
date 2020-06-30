@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using Credit.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Credit.Data
 {
@@ -21,8 +23,12 @@ namespace Credit.Data
                 throw new ArgumentNullException(nameof(emp));
             }
             string newLocation = emp.City + ", " + emp.State;
-            var location = new Location { OfficeLocation = newLocation };
-            _context.Locations.Add(location);
+            var location = _context.Locations.Single(l => l.OfficeLocation == newLocation);
+            if (location == null)
+            {
+                location = new Location { OfficeLocation = newLocation };
+            }
+            emp.Location = location;
             _context.Employees.Add(emp);
         }
 
@@ -38,12 +44,17 @@ namespace Credit.Data
 
         public IEnumerable<Employee> GetAllEmployees()
         {
-            return _context.Employees.ToList();
+            return _context.Employees.Include(e => e.Location).ToList();
+        }
+
+        public IEnumerable<Employee> Find(Expression<Func<Employee, bool>> expressoion)
+        {
+            return _context.Set<Employee>().Where(expressoion);
         }
 
         public Employee GetEmployeeById(int id)
         {
-            return _context.Employees.FirstOrDefault(p => p.Id == id);
+            return _context.Employees.Include(e => e.Location).FirstOrDefault(p => p.Id == id);
         }
 
         public bool SaveChanges()
@@ -53,7 +64,12 @@ namespace Credit.Data
 
         public void UpdateEmployee(Employee emp)
         {
-            //_context.Employees.Update(emp);
+           //do nothing
+        }
+
+        public Location GetLocationByName(string location)
+        {
+            return _context.Locations.Single(l => l.OfficeLocation == location);
         }
     }
 }

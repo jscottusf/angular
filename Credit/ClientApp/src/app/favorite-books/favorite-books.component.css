@@ -25,3 +25,14 @@
 #generic-book {
   width: 130px;
 }
+
+@media screen and (max-with: 1143px) {
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .books {
+    display: grid;
+    grid-gap: 5px;
+  }
+}

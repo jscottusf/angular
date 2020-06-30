@@ -40,4 +40,5 @@ export class BookDataModel {
   imageUrl: string;
   info: string;
   preview: string;
+  rating: number;
 }

@@ -1,4 +1,4 @@
-.save-icon {
+.delete-icon {
   position: absolute;
   top: 8px;
   right: 0px;
@@ -7,7 +7,7 @@
   cursor: pointer;
 }
 
-.save-icon i {
+.delete-icon i {
   padding: 0;
   color: #17a2b8;
   font-size: 30px;
@@ -15,12 +15,12 @@
   z-index: 4;
 }
 
-.save-icon i:hover {
+.delete-icon i:hover {
   color: red;
   transition: 1s;
 }
 
-.save-icon i:active {
+.delete-icon i:active {
   color: red;
   transition: 1s;
 }

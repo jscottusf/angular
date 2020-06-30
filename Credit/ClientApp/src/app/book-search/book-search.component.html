@@ -9,7 +9,7 @@
             <form #form="ngForm" class="input-group mb-3" (submit)="searchGoogleBooks(form.bookSearch)">
                 <input type="text" class="form-control" [value]="form.bookSearch" id="bookSearch" [(ngModel)]="form.bookSearch" #bookSearch="ngModel" name="bookSearch" placeholder="Seach by title, author, etc" aria-label="Recipient's username" aria-describedby="button-addon2">
                 <div class="input-group-append">
-                    <button class="btn btn-info" type="submit" id="button-addon2">Button</button>
+                    <button class="btn btn-info" type="submit" id="button-addon2">Search</button>
                 </div>
             </form>
         </div>
@@ -29,7 +29,7 @@
                     <div class="card-col">
                         <h5 class="card-title">{{book.volumeInfo.title}}</h5>
                         <h6 class="card-subtitle mb-2 text-muted" *ngIf="book.volumeInfo.authors">{{book.volumeInfo.authors[0]}}</h6>
-                        <p class="card-text">{{book.searchInfo.textSnippet}}</p>
+                        <p class="card-text" *ngIf="book.searchInfo">{{book.searchInfo.textSnippet}}</p>
                         <div class="row">
                             <a class="mx-3" href="{{book.volumeInfo.infoLink}}">Info</a>
                             <a href="{{book.volumeInfo.previewLink}}"> Preview</a>

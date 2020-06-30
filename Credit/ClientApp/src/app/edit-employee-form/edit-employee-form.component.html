@@ -1,111 +1,133 @@
 <div class="container">
-    <div *ngIf="!empData">
-        <h1>Invalid Employee ID</h1>
-    </div>
+  <div *ngIf="!empData">
+    <h1>Invalid Employee ID</h1>
+  </div>
 
-    <div *ngIf="empData">
-        <h1>Edit Employee Profile of {{empData.firstName}} {{empData.lastName}}</h1>
-        <div [hidden]="submitted">
-            <form #form="ngForm" (submit)="editEmployee(form)">
-                <input type="hidden" name="id" [value]="empData.id" />
-                <div class="form-group">
-                    <label for="name">First Name</label>
-                    <input type="text"
-                           class="form-control"
-                           id="firstName"
-                           required
-                           [(ngModel)]="empData.firstName"
-                           name="firstName"
-                           #firstName="ngModel" />
-                    <div [hidden]="firstName.valid || firstName.pristine"
-                         class="alert alert-danger">
-                        First Name is required
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="name">Last Name</label>
-                    <input type="text"
-                           class="form-control"
-                           id="lastName"
-                           required
-                           [(ngModel)]="empData.lastName"
-                           name="lastName"
-                           #lastName="ngModel" />
-                    <div [hidden]="lastName.valid || lastName.pristine"
-                         class="alert alert-danger">
-                        Last Name is required
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="name">City</label>
-                    <input type="text"
-                           class="form-control"
-                           id="city"
-                           required
-                           [(ngModel)]="empData.city"
-                           name="city"
-                           #city="ngModel" />
-                    <div [hidden]="city.valid || city.pristine" class="alert alert-danger">
-                        Employee City is required
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="name">State</label>
-                    <input type="text"
-                           class="form-control"
-                           id="state"
-                           required
-                           [(ngModel)]="empData.state"
-                           name="state"
-                           #state="ngModel" />
-                    <div [hidden]="state.valid || state.pristine" class="alert alert-danger">
-                        Employee State is required
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="name">Gender</label>
-                    <input type="text"
-                           class="form-control"
-                           id="gender"
-                           required
-                           [(ngModel)]="empData.gender"
-                           name="gender"
-                           #gender="ngModel" />
-                    <div [hidden]="gender.valid || gender.pristine"
-                         class="alert alert-danger">
-                        Gender is required
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="name">Department</label>
-                    <input type="text"
-                           class="form-control"
-                           id="department"
-                           required
-                           [(ngModel)]="empData.department"
-                           name="department"
-                           #department="ngModel" />
-                    <div [hidden]="department.valid || department.pristine"
-                         class="alert alert-danger">
-                        Department is required
-                    </div>
-                </div>
-
-                <button type="submit" class="btn btn-primary" [disabled]="form.invalid">
-                    Update Employee Data
-                </button>
-            </form>
+  <div *ngIf="empData">
+    <h1>
+      Edit Employee Profile of {{ empData.firstName }} {{ empData.lastName }}
+    </h1>
+    <div [hidden]="submitted">
+      <form #form="ngForm" (submit)="editEmployee(form)">
+        <input type="hidden" name="id" [value]="empData.id" />
+        <div class="form-group">
+          <label for="name">First Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="firstName"
+            required
+            [(ngModel)]="empData.firstName"
+            name="firstName"
+            #firstName="ngModel"
+          />
+          <div
+            [hidden]="firstName.valid || firstName.pristine"
+            class="alert alert-danger"
+          >
+            First Name is required
+          </div>
         </div>
+
+        <div class="form-group">
+          <label for="name">Last Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="lastName"
+            required
+            [(ngModel)]="empData.lastName"
+            name="lastName"
+            #lastName="ngModel"
+          />
+          <div
+            [hidden]="lastName.valid || lastName.pristine"
+            class="alert alert-danger"
+          >
+            Last Name is required
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="name">City</label>
+          <input
+            type="text"
+            class="form-control"
+            id="city"
+            required
+            [(ngModel)]="empData.city"
+            name="city"
+            #city="ngModel"
+          />
+          <div
+            [hidden]="city.valid || city.pristine"
+            class="alert alert-danger"
+          >
+            Employee City is required
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="name">State</label>
+          <input
+            type="text"
+            class="form-control"
+            id="state"
+            required
+            [(ngModel)]="empData.state"
+            name="state"
+            #state="ngModel"
+          />
+          <div
+            [hidden]="state.valid || state.pristine"
+            class="alert alert-danger"
+          >
+            Employee State is required
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="name">Gender</label>
+          <input
+            type="text"
+            class="form-control"
+            id="gender"
+            required
+            [(ngModel)]="empData.gender"
+            name="gender"
+            #gender="ngModel"
+          />
+          <div
+            [hidden]="gender.valid || gender.pristine"
+            class="alert alert-danger"
+          >
+            Gender is required
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="name">Department</label>
+          <input
+            type="text"
+            class="form-control"
+            id="department"
+            required
+            [(ngModel)]="empData.department"
+            name="department"
+            #department="ngModel"
+          />
+          <div
+            [hidden]="department.valid || department.pristine"
+            class="alert alert-danger"
+          >
+            Department is required
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" [disabled]="form.invalid">
+          Update Employee Data
+        </button>
+      </form>
     </div>
+  </div>
 </div>
-
-
-   
-
-
-

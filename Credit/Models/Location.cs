@@ -12,6 +12,6 @@ namespace Credit.Models
         public int LocationId { get; set; }
         [Required]
         public string OfficeLocation { get; set; }
-        public ICollection<Employee> Employees { get; set; } = new List<Employee>();
+        public virtual List<Employee> Employees { get; set; } 
     }
 }

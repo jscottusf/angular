@@ -25,12 +25,13 @@ namespace Credit
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<EmployeeContext>(opt => opt.UseSqlServer
+            services.AddDbContext<EmployeeContext>(opt => opt.UseLazyLoadingProxies().UseSqlServer
             (Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddControllers().AddNewtonsoftJson(s =>
             {
                 s.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+                s.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
             });
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());

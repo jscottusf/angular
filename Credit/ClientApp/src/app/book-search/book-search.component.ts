@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { GoogleBookService } from "../../Services/googlebooks.service";
-import { NgForm } from "@angular/forms";
+import { BookService, BookDataModel } from "../../Services/books.service";
 
 @Component({
   selector: "app-book-search",
@@ -11,19 +11,16 @@ export class BookSearchComponent implements OnInit {
   query: string = "";
   bookData: any = {};
   bookList = [];
-  public bookSearch: string = "";
-
-  constructor(private bookService: GoogleBookService) {}
+  public bookModel: BookDataModel;
+  constructor(
+    private bookService: GoogleBookService,
+    private savedService: BookService
+  ) {}
 
   ngOnInit() {
     this.query = "Jurrasic Park";
     this.searchGoogleBooks(this.query);
-    this.resetForm();
-  }
-
-  resetForm(form?: NgForm) {
-    if (form != null) form.form.reset();
-    this.bookSearch = "";
+    this.getAllSavedBooks();
   }
 
   searchGoogleBooks(query) {
@@ -31,9 +28,13 @@ export class BookSearchComponent implements OnInit {
       (data) => {
         this.bookData = data;
         this.bookList = this.bookData.items;
-        console.log(this.bookList);
-        this.resetForm();
       },
+      (err) => console.log(err)
+    );
+  }
+  getAllSavedBooks() {
+    this.savedService.getallBooks().subscribe(
+      (data) => (this.bookModel = data),
       (err) => console.log(err)
     );
   }

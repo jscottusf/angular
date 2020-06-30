@@ -12,5 +12,6 @@ namespace Credit.Dtos
         public string State { get; set; }
         public string Department { get; set; }
         public string Gender { get; set; }
+        public int LocationId { get; set; }
     }
 }

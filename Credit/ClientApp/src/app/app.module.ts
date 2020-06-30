@@ -18,6 +18,8 @@ import { GoogleBookService } from "../Services/googlebooks.service";
 import { BookService } from "src/Services/books.service";
 import { FavoriteBooksComponent } from './favorite-books/favorite-books.component';
 import { SaveIconComponent } from './save-icon/save-icon.component';
+import { RemoveIconComponent } from './remove-icon/remove-icon.component';
+import { BookRatingComponent } from './book-rating/book-rating.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { SaveIconComponent } from './save-icon/save-icon.component';
     BookSearchComponent,
     FavoriteBooksComponent,
     SaveIconComponent,
+    RemoveIconComponent,
+    BookRatingComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: "ng-cli-universal" }),

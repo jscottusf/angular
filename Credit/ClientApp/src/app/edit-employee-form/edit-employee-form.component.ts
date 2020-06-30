@@ -14,6 +14,7 @@ import { NgForm } from "@angular/forms";
 export class EditEmployeeFormComponent implements OnInit {
   id;
   public empData: EmployeeDataModel;
+  success = false;
   constructor(
     private router: Router,
     private route: ActivatedRoute,
@@ -28,7 +29,6 @@ export class EditEmployeeFormComponent implements OnInit {
   getEmployeeById(id) {
     this.serviceEmployee.getEmployeeById(id).subscribe(
       (data) => {
-        console.log(data);
         this.empData = data;
       },
       (err) => {

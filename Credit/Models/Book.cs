@@ -17,5 +17,6 @@ namespace Credit.Models
         public string ImageUrl { get; set; }
         public string Info { get; set; }
         public string Preview { get; set; }
+        public int Rating { get; set; }
     }
 }

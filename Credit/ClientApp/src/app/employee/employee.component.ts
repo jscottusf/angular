@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, EventEmitter } from "@angular/core";
+import { Router, ActivatedRoute } from "@angular/router";
 import {
   EmployeeDataModel,
   EmployeeService,
@@ -11,6 +12,7 @@ import { NgForm } from "@angular/forms";
   styleUrls: ["./employee.component.css"],
 })
 export class EmployeeComponent implements OnInit {
+  state$: any;
   alertShow = false;
   alertMessage = "";
   alertType = "";

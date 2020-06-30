@@ -59,12 +59,13 @@ namespace Credit.Controllers
             var updatedBook = new Book
             {
                 BookId = bookModelFromRepo.BookId,
-                Title = bookModelFromRepo.Title,
-                Author = bookModelFromRepo.Author,
-                Description = bookModelFromRepo.Description,
-                ImageUrl = bookModelFromRepo.ImageUrl,
-                Info = bookModelFromRepo.Info,
-                Preview = bookModelFromRepo.Preview
+                Title = book.Title,
+                Author = book.Author,
+                Description = book.Description,
+                ImageUrl = book.ImageUrl,
+                Info = book.Info,
+                Preview = book.Preview,
+                Rating = book.Rating
             };
             _repository.DeleteBook(bookModelFromRepo);
             _repository.UpdateBook(updatedBook);

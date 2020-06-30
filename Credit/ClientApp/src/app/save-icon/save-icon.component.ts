@@ -23,12 +23,21 @@ export class SaveIconComponent implements OnInit {
   saveBook(book) {
     console.log(book);
     this.bookInfo = {
-      title: book.volumeInfo.title,
-      author: book.volumeInfo.authors[0],
-      description: book.searchInfo.textSnippet,
-      imageUrl: book.volumeInfo.imageLinks.thumbnail,
-      info: book.volumeInfo.infoLink,
-      preview: book.volumeInfo.previewLink,
+      title: book.volumeInfo.title
+        ? book.volumeInfo.title
+        : "No Title...Why did you save this?",
+      author: book.volumeInfo.authors
+        ? book.volumeInfo.authors[0]
+        : "No author listed",
+      description: book.searchInfo
+        ? book.searchInfo.textSnippet
+        : "no description available",
+      imageUrl: book.volumeInfo.imageLinks
+        ? book.volumeInfo.imageLinks.thumbnail
+        : "../../assets/images/book-generic.jpg",
+      info: book.volumeInfo.infoLink ? book.volumeInfo.infoLink : "",
+      preview: book.volumeInfo.previewLink ? book.volumeInfo.previewLink : "",
+      rating: 0,
     };
     this.bookService.postNewBook(this.bookInfo).subscribe(
       (res) => this.router.navigate(["/favoritebooks"]),

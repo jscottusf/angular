@@ -20,4 +20,12 @@ export class FavoriteBooksComponent implements OnInit {
       (err) => console.log(err)
     );
   }
+
+  exexOnDelete($event: any) {
+    this.getAllSavedBooks();
+  }
+
+  exexOnRate($event: any) {
+    this.getAllSavedBooks();
+  }
 }
