@@ -54,23 +54,25 @@ namespace Credit.Controllers
 
         //PUT api/employees/id
         [HttpPut("{id}")]
-        public ActionResult UpdateEmployee(int id, EmployeeUpdateDto employeeUpdateDto)
+        public ActionResult UpdateEmployee(int id, Employee emp)
         {
             var employeeModelFromRepo = _repository.GetEmployeeById(id);
             if (employeeModelFromRepo == null)
             {
                 return NotFound();
             }
-            string newLocation = employeeModelFromRepo.City + ", " + employeeModelFromRepo.State;
-            var location = _repository.GetLocationByName(newLocation);
-            if (location == null)
+            var employee = new Employee
             {
-                location = new Location { OfficeLocation = newLocation };
-                employeeModelFromRepo.LocationId = 0;
-            }
-            employeeModelFromRepo.Location = location;
-            _mapper.Map(employeeUpdateDto, employeeModelFromRepo);
-            _repository.UpdateEmployee(employeeModelFromRepo);
+                Id = employeeModelFromRepo.Id,
+                FirstName = emp.FirstName,
+                LastName = emp.LastName,
+                City = emp.City,
+                State = emp.State,
+                Department = emp.Department,
+                Gender = emp.Gender
+            };
+            _repository.DeleteEmployee(employeeModelFromRepo);
+            _repository.UpdateEmployee(employee);
             _repository.SaveChanges();
             return NoContent();
         }

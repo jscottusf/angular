@@ -23,7 +23,7 @@ namespace Credit.Data
                 throw new ArgumentNullException(nameof(emp));
             }
             string newLocation = emp.City + ", " + emp.State;
-            var location = _context.Locations.Single(l => l.OfficeLocation == newLocation);
+            var location = _context.Locations.SingleOrDefault(l => l.OfficeLocation == newLocation);
             if (location == null)
             {
                 location = new Location { OfficeLocation = newLocation };
@@ -44,7 +44,7 @@ namespace Credit.Data
 
         public IEnumerable<Employee> GetAllEmployees()
         {
-            return _context.Employees.Include(e => e.Location).ToList();
+            return _context.Employees.ToList();
         }
 
         public IEnumerable<Employee> Find(Expression<Func<Employee, bool>> expressoion)
@@ -64,7 +64,18 @@ namespace Credit.Data
 
         public void UpdateEmployee(Employee emp)
         {
-           //do nothing
+            if (emp == null)
+            {
+                throw new ArgumentNullException(nameof(emp));
+            }
+            string newLocation = emp.City + ", " + emp.State;
+            var location = _context.Locations.SingleOrDefault(l => l.OfficeLocation == newLocation);
+            if (location == null)
+            {
+                location = new Location { OfficeLocation = newLocation };
+            }
+            emp.Location = location;
+            _context.Employees.Update(emp);
         }
 
         public Location GetLocationByName(string location)
