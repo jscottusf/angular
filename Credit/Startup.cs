@@ -25,7 +25,8 @@ namespace Credit
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<EmployeeContext>(opt => opt.UseLazyLoadingProxies().UseSqlServer
+            //.UseLazyLoadingProxies() to auto include relational data
+            services.AddDbContext<EmployeeContext>(opt => opt.UseSqlServer
             (Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddControllers().AddNewtonsoftJson(s =>
@@ -46,6 +47,7 @@ namespace Credit
 
             services.AddScoped<IEmployeeRepo, SqlEmployeeRepo>();
             services.AddScoped<IBookRepo, SqlBookRepo>();
+            services.AddScoped<ILocationRepo, SqlLocationRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

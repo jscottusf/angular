@@ -47,9 +47,9 @@ namespace Credit.Data
             return _context.Employees.ToList();
         }
 
-        public IEnumerable<Employee> Find(Expression<Func<Employee, bool>> expressoion)
+        public IEnumerable<Employee> Find(Expression<Func<Employee, bool>> expression)
         {
-            return _context.Set<Employee>().Where(expressoion);
+            return _context.Set<Employee>().Where(expression);
         }
 
         public Employee GetEmployeeById(int id)
