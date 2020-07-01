@@ -46,6 +46,10 @@ namespace Credit.Controllers
             {
                 return NotFound();
             }
+            if (locationModelFromRepo.Employees.Count > 0)
+            {
+                return Json(new { error = "Cannot remove office locations with employees" });
+            }
             _repository.DeleteLocation(locationModelFromRepo);
             _repository.SaveChanges();
             return NoContent();

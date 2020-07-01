@@ -1,3 +1,7 @@
 .delete-icon, .edit-icon {
   cursor: pointer;
 }
+
+.employees {
+    margin-bottom: 200px;
+}

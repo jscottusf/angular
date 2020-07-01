@@ -54,7 +54,8 @@ namespace Credit.Data
 
         public Employee GetEmployeeById(int id)
         {
-            return _context.Employees.Include(e => e.Location).FirstOrDefault(p => p.Id == id);
+            //.Include(e => e.Location)
+            return _context.Employees.FirstOrDefault(p => p.Id == id);
         }
 
         public bool SaveChanges()

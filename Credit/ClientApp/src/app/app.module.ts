@@ -16,10 +16,12 @@ import { AlertComponent } from "./alert/alert.component";
 import { BookSearchComponent } from "./book-search/book-search.component";
 import { GoogleBookService } from "../Services/googlebooks.service";
 import { BookService } from "src/Services/books.service";
-import { FavoriteBooksComponent } from './favorite-books/favorite-books.component';
-import { SaveIconComponent } from './save-icon/save-icon.component';
-import { RemoveIconComponent } from './remove-icon/remove-icon.component';
-import { BookRatingComponent } from './book-rating/book-rating.component';
+import { FavoriteBooksComponent } from "./favorite-books/favorite-books.component";
+import { SaveIconComponent } from "./save-icon/save-icon.component";
+import { RemoveIconComponent } from "./remove-icon/remove-icon.component";
+import { BookRatingComponent } from "./book-rating/book-rating.component";
+import { OfficeLocationsComponent } from "./office-locations/office-locations.component";
+import { OfficeLocationService } from "src/Services/officelocations.service";
 
 @NgModule({
   declarations: [
@@ -35,6 +37,7 @@ import { BookRatingComponent } from './book-rating/book-rating.component';
     SaveIconComponent,
     RemoveIconComponent,
     BookRatingComponent,
+    OfficeLocationsComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: "ng-cli-universal" }),
@@ -43,12 +46,18 @@ import { BookRatingComponent } from './book-rating/book-rating.component';
     RouterModule.forRoot([
       { path: "", component: EmployeeComponent },
       { path: "employees/:id", component: EditEmployeeFormComponent },
+      { path: "offices", component: OfficeLocationsComponent },
       { path: "booksearch", component: BookSearchComponent },
       { path: "favoritebooks", component: FavoriteBooksComponent },
     ]),
     NgbModule,
   ],
-  providers: [EmployeeService, GoogleBookService, BookService],
+  providers: [
+    EmployeeService,
+    GoogleBookService,
+    BookService,
+    OfficeLocationService,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

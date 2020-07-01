@@ -1,11 +1,22 @@
 ﻿<Properties StartupConfiguration="{C675F699-77F4-425E-944C-0494D7FB5278}|Default">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Credit/ClientApp/src/app/office-locations/office-locations.component.html">
+    <Files>
+      <File FileName="Credit/ClientApp/src/app/office-locations/office-locations.component.html" Line="24" Column="30" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Credit" expanded="True">
             <Node name="Credit" expanded="True">
-              <Node name="Startup.cs" selected="True" />
+              <Node name="ClientApp" expanded="True">
+                <Node name="src" expanded="True">
+                  <Node name="app" expanded="True">
+                    <Node name="office-locations" expanded="True">
+                      <Node name="office-locations.component.html" selected="True" />
+                    </Node>
+                  </Node>
+                </Node>
+              </Node>
             </Node>
           </Node>
         </State>

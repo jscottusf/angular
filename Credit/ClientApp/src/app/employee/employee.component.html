@@ -12,9 +12,10 @@
            alertType="{{ alertType }}"
            alertMessage="{{ alertMessage }}"
            (onDismiss)="exexOnDismiss($event)"
-           (onEdit)="exexOnEdit($event)"></alert>
+           (onEdit)="exexOnEdit($event)">
+    </alert>
 
-    <div>
+    <div class="employees">
         <div *ngIf="!emplist">
             ...loading
         </div>

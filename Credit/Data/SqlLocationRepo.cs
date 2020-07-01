@@ -22,7 +22,8 @@ namespace Credit.Data
             {
                 throw new ArgumentNullException(nameof(location));
             }
-
+            //var employees = _context.Locations.FirstOrDefault(l => l.Employees.Count )
+            
             _context.Locations.Remove(location);
         }
 

@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1>Office Management Page</h1>
+            <p>This page features a list of employees based on office location</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 offices">
+            <div *ngIf="!officeLocations">
+                loading...
+            </div>
+            <div *ngIf="officeLocations">
+                <div *ngFor="let office of officeLocations">
+                    <h5>{{ office.officeLocation }}</h5>
+                    <div *ngIf="office.employees.length">
+                        <ul *ngFor="let emp of office.employees">
+                            <li *ngIf="emp">{{emp.firstName}} {{emp.lastName}} | {{emp.department}}</li>
+                        </ul>
+                    </div>
+                    <div *ngIf="!office.employees.length">
+                        <ul>
+                            <li>No employees at {{ office.officeLocation }} office location</li>
+                        </ul>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
