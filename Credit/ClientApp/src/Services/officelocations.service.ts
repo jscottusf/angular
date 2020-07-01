@@ -1,6 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Inject, OnInit } from "@angular/core";
 import { Observable } from "rxjs";
+import { EmployeeDataModel } from "./employees.service";
 
 export class OfficeLocationService implements OnInit {
   appurl: string = "";
@@ -27,7 +28,7 @@ export class OfficeLocationService implements OnInit {
   }
 }
 
-export interface Employee {
+interface Employee {
   id: number;
   firstName: string;
   lastName: string;

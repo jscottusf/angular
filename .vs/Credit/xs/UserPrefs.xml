@@ -6,18 +6,8 @@
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="Credit" expanded="True">
-            <Node name="Credit" expanded="True">
-              <Node name="ClientApp" expanded="True">
-                <Node name="src" expanded="True">
-                  <Node name="app" expanded="True">
-                    <Node name="office-locations" expanded="True">
-                      <Node name="office-locations.component.html" selected="True" />
-                    </Node>
-                  </Node>
-                </Node>
-              </Node>
-            </Node>
+          <Node name="Credit" expanded="True" selected="True">
+            <Node name="Credit" expanded="True" />
           </Node>
         </State>
       </Pad>

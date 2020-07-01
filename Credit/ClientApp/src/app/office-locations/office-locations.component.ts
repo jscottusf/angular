@@ -2,7 +2,6 @@ import { Component, OnInit } from "@angular/core";
 import {
   OfficeLocationService,
   LocationDataModel,
-  Employee,
 } from "../../Services/officelocations.service";
 
 @Component({
@@ -23,5 +22,12 @@ export class OfficeLocationsComponent implements OnInit {
       .getallLocations()
       .subscribe((data) => (this.officeLocations = data)),
       (err) => console.log(err);
+  }
+
+  removeOfficeLocation(id) {
+    this.officeLocationService.deleteLocation(id).subscribe(
+      (res) => this.getAllOfficeLocations(),
+      (err) => console.log(err)
+    );
   }
 }

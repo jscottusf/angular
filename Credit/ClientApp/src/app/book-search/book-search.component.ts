@@ -12,6 +12,7 @@ export class BookSearchComponent implements OnInit {
   bookData: any = {};
   bookList = [];
   public bookModel: BookDataModel;
+
   constructor(
     private bookService: GoogleBookService,
     private savedService: BookService

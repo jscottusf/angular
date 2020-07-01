@@ -22,6 +22,7 @@
                         <ul>
                             <li>No employees at {{ office.officeLocation }} office location</li>
                         </ul>
+                        <button class="btn btn-primary" (click)="removeOfficeLocation(office.locationId)">Remove {{ office.officeLocation }}?</button>
                     </div>
                 </div>
         </div>
