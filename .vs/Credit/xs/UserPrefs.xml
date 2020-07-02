@@ -1,13 +1,21 @@
 ﻿<Properties StartupConfiguration="{C675F699-77F4-425E-944C-0494D7FB5278}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Credit/ClientApp/src/app/office-locations/office-locations.component.html">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Credit/Data/SqlEmployeeRepo.cs">
     <Files>
-      <File FileName="Credit/ClientApp/src/app/office-locations/office-locations.component.html" Line="24" Column="30" />
+      <File FileName="Credit/Data/SqlLocationRepo.cs" Line="17" Column="10" />
+      <File FileName="Credit/Data/AppDbContext.cs" Line="22" Column="10" />
+      <File FileName="Credit/Data/ILocationRepo.cs" />
+      <File FileName="Credit/Controllers/LocationsController.cs" />
+      <File FileName="Credit/Data/SqlEmployeeRepo.cs" Line="47" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="Credit" expanded="True" selected="True">
-            <Node name="Credit" expanded="True" />
+          <Node name="Credit" expanded="True">
+            <Node name="Credit" expanded="True">
+              <Node name="Data" expanded="True">
+                <Node name="SqlEmployeeRepo.cs" selected="True" />
+              </Node>
+            </Node>
           </Node>
         </State>
       </Pad>

@@ -29,13 +29,17 @@ export class BookSearchComponent implements OnInit {
       (data) => {
         this.bookData = data;
         this.bookList = this.bookData.items;
+        console.log(this.bookList);
       },
       (err) => console.log(err)
     );
   }
   getAllSavedBooks() {
     this.savedService.getallBooks().subscribe(
-      (data) => (this.bookModel = data),
+      (data) => {
+        this.bookModel = data;
+        console.log(this.bookModel);
+      },
       (err) => console.log(err)
     );
   }
